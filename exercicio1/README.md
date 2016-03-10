@@ -1,5 +1,5 @@
 # MC7723-1
-##Titouan THIBAUD - RA : 180879
+#####Titouan THIBAUD - RA : 180879
 
 **-1**  Podemos especificar as otimizações com as seguintes opções : -O0, -O1, O2,O3
 
