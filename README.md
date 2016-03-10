@@ -50,18 +50,6 @@ Nesse caso so precisa rodar "make" para compilar o programa.
 O programa gasta um tempo igual para ser excutado. A gente podia prever esse resultado : separar os arquivos só deixa mais facil para o programador organizar seu projeito, mas o compilador vai gerar o mesmo binario depois. 
 
 **Modificação para entrar n como parametro**
-So precisa usar esse codigo : 
-```
-int main(int argc, char** argv)
-{
-  long n = strtol(argv[1], NULL, 0);
-  ...
-  ```
-
-Usando o mesmo numero que antes como entrada (104395301), o tempo de execução é esse :
-real	0m0.334s
-user	0m0.334s
-
 
 Segundo o resultado das medidas, o programa é mais rapido compilado com dois arquivos do que com um só.
 Eu esperava que seja o mesmo, porque não tem porque o binario gerado ser diferente...
@@ -78,7 +66,7 @@ O programa fica bem mais rapido com essa modificação :
 **
 
 A parte do programa que demora mais é a função Primo.
-Se eu tiver que parallelizar o codigo, eu escolheria a parte dessa função Primo, justamente porque é essa que mais demora.
+Se eu tiver que parallelizar o codigo, eu escolheria o laço em que a gente testa cada numero para ver se ele é primo ou não.
 
 
 
