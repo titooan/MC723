@@ -1,4 +1,5 @@
 # MC7723-1
+##Titouan THIBAUD - RA : 180879
 
 **-1**  Podemos especificar as otimizações com as seguintes opções : -O0, -O1, O2,O3
 
@@ -8,7 +9,7 @@
 
 **-4** Podemos usar o gdb com o seguinte comando : ```gdb primo```. O programa tem que ser compilado com a opção ```-g```.
 
-**-5** 
+
 
 ##Atividade
 
@@ -61,8 +62,12 @@ Usando o mesmo numero que antes como entrada (104395301), o tempo de execução 
 real	0m0.334s
 user	0m0.334s
 
-O tempo que eu medi era o mesmo com um ou dois arquivos.
-Quase não mudou o tempo de execução em relação a antes, porque o que demora não é analisar o parametro entrado na linha de comando, mas o laço que verifica se o numero é primo ou não.
+
+Segundo o resultado das medidas, o programa é mais rapido compilado com dois arquivos do que com um só.
+Eu esperava que seja o mesmo, porque não tem porque o binario gerado ser diferente...
+
+Depois de ter melhorado um pouquinho o programa, não tem mais diferencia de tempo de execução, segundo minhas medidas.
+
 
 
 **Modificação do laço**   
@@ -71,6 +76,11 @@ O programa fica bem mais rapido com essa modificação :
   user	0m0.135s  
 
 **
+
+A parte do programa que demora mais é a função Primo.
+Se eu tiver que parallelizar o codigo, eu escolheria a parte dessa função Primo, justamente porque é essa que mais demora.
+
+
 
 
 
