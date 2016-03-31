@@ -28,7 +28,7 @@ Máquina 4 ( = Máquina 26) > Máquina 18 > Máquina 10 > Máquina 5 > Máquina 
 
 (Máquina 4 : melhor desempenho, Máquina 23 : desempenho pior)
 
-El benchmark 2 nos permite ordenar um outro grupo de máquinas, mas é dificil fazer uma ordenação de todas que seja certa com certeza, porque temos resultados em benchmarks diferentes.  
+O benchmark 2 nos permite ordenar um outro grupo de máquinas, mas é dificil fazer uma ordenação de todas que seja certa com certeza, porque temos resultados em benchmarks diferentes.  
 
 Máquina 15 > Máquina 14 > Máquina 24 > Máquina 6 > Máquina 16 
 
