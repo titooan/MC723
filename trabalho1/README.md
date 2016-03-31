@@ -1,6 +1,14 @@
 # Projet 1 - Parte 3
 #####Titouan THIBAUD - RA : 180879
 
+##Introdução
+
+Nesse projeto procuramos entender o que é um benchmark, e desenvolver um benchmark usando um programa OpenSource existante.   
+O objectivo desse benchmark era comparar o desempenho de varias máquinas, baseado em varios criterios, que tinhamos que escolher. 
+
+Depois do fim da parte 2 do projeto, temos resultados de varios programas de benchmark rodados em varias máquinas diferentes. Vamos usar esses dados para tentar comparar o desempenho das máquinas.
+
+##Avaliação de desempenho
 Nessa parte vamos comparar o desempenho dos computadores usados para rodar os programas de benchmark. 
 
 Comparar o tempo de execucção de um mesmo programa em varios computadores já pode dar uma boa ideia do desempenho relativo deles. 
