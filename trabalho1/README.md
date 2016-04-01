@@ -9,7 +9,6 @@ O objectivo desse benchmark era comparar o desempenho de varias máquinas, basea
 Depois do fim da parte 2 do projeto, temos resultados de varios programas de benchmark rodados em varias máquinas diferentes. Vamos usar esses dados para tentar comparar o desempenho das máquinas.
 
 ##Avaliação de desempenho
-Nessa parte vamos comparar o desempenho dos computadores usados para rodar os programas de benchmark. 
 
 Comparar o tempo de execucção de um mesmo programa em varios computadores já pode dar uma boa ideia do desempenho relativo deles. 
 Por exemplo, com o programma `ffmpeg` o computador que demora 14,84s tem um desempenho obviamente melhor que o computador que demora 69,65s.
@@ -46,3 +45,19 @@ Máquina 29 > Máquina 7 > Máquina 30 > Máquina 28 > Máquina 11
 Por fim, ordenei essas máquinas com os dados do benchmark 6 que pareciam certos : 
 Máquina 9 > Máquina 21 > Máquina 6
 
+###Outras informações analisadas com os dados
+
+Além dos tempos de execução, o benchmark 6 traz algumas outras informações interessantes. 
+A frequencia dos ciclos e o numero de instruções por ciclo dam uma ideia das optimizaçoẽs que o processador é capaz de fazer. 
+
+Os dois dám essa ordem :    
+Máquina 26 > Máquina 24 > Máquina 7 > Máquina 15 > Máquina  21 >  Máquina  9 > Máquina  17 > Máquina 31   
+As máquinas 17, 21 e 9 tem resultados muitos parecidos, o que faz sentido porque são máquina do IC com a mesma configuração.    
+
+O Task-Clock representa o nivel de paralelização médio, e da essa ordem :     
+Máquina 7 > Máquina 15 > Máquina 24 > Máquina 17 > Máquina 9  > Máquina 21  > Máquina 31  
+Sem sorpresa, as máquinas com configurações mais recentes tem os melhores resultados.
+
+###Conclusão
+
+Os dados obtidos com os diferentes benchmark nos permitiram comparar o desempenho de varias máquinas, baseado em varios criterios. Não consegui fazer uma ordenação incluindo todas as máquinas porque não todas rodaram os mesmos programas de benchmark, mas mesmo assim deu para fazer uma comparação interessante entre varios grupos de maquinas.
