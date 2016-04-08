@@ -47,7 +47,84 @@ Escolhi uma cache de 128K, e experimentei varios tamanhos de bloco para descobri
 **Cache de Instruções :**
 * Tamanho da cache : 4K
 * Tamanho do bloco : 128
-* 
+
 **Cache de Dados :**
 * Tamanho da cache : 128K
 * Tamanho do bloco : 512
+
+####Lucas_f2b
+
+![resultados](https://github.com/titooan/MC723/blob/master/exercicio2/lucas/tables.png "resultados")
+#####Instruction cache
+Nesse caso também um tamanho de cache e de bloco muito pequenos funcionam.
+
+(Nesse caso também não precisa de grafos)
+
+#####Data cache
+![resultados](https://github.com/titooan/MC723/blob/master/exercicio2/lucas/dsize.png "resultados")
+![resultados](https://github.com/titooan/MC723/blob/master/exercicio2/lucas/dbsize.png "resultados")
+
+Aqui também escolhi uma cache de 128K, e experimentei varios tamanhos de bloco para descobrir o melhor.
+
+#####Melhor configuração
+**Cache de Instruções :**
+* Tamanho da cache : 4K
+* Tamanho do bloco : 4
+
+**Cache de Dados :**
+* Tamanho da cache : 128K
+* Tamanho do bloco : 256
+
+(A tabela comtem resultados que permitem confirmar que é melhor usar uma cache de 128K do que uma cache de 64K)
+
+
+####Vortex_m2b
+
+![resultados](https://github.com/titooan/MC723/blob/master/exercicio2/vortex/table.png "resultados")
+#####Instruction cache
+![resultados](https://github.com/titooan/MC723/blob/master/exercicio2/vortex/isize.png "resultados")
+![resultados](https://github.com/titooan/MC723/blob/master/exercicio2/vortex/ibsize.png "resultados")
+
+Tem um ponto estranho que não consegui explicar, mas acho que o tamanho de bloco ótimo é 256. 
+
+#####Data cache
+![resultados](https://github.com/titooan/MC723/blob/master/exercicio2/vortex/dsize.png "resultados")
+![resultados](https://github.com/titooan/MC723/blob/master/exercicio2/vortex/dbsize.png "resultados")
+
+
+#####Melhor configuração
+**Cache de Instruções :**
+* Tamanho da cache : 128K
+* Tamanho do bloco : 256
+
+**Cache de Dados :**
+* Tamanho da cache : 128K
+* Tamanho do bloco : 64
+
+
+
+####gcc_f2b
+
+![resultados](https://github.com/titooan/MC723/blob/master/exercicio2/gcc/table.png "resultados")
+#####Instruction cache
+![resultados](https://github.com/titooan/MC723/blob/master/exercicio2/gcc/isize.png "resultados")
+![resultados](https://github.com/titooan/MC723/blob/master/exercicio2/gcc/ibsize.png "resultados")
+
+#####Data cache
+![resultados](https://github.com/titooan/MC723/blob/master/exercicio2/gcc/dsize.png "resultados")
+![resultados](https://github.com/titooan/MC723/blob/master/exercicio2/gcc/dbsize.png "resultados")
+
+Aqui também escolhi uma cache de 128K, e experimentei varios tamanhos de bloco para descobrir o melhor.
+
+#####Melhor configuração
+**Cache de Instruções :**
+* Tamanho da cache : 128K
+* Tamanho do bloco : 512
+
+**Cache de Dados :**
+* Tamanho da cache : 128K
+* Tamanho do bloco : 128
+
+
+
+
