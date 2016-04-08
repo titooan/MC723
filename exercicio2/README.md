@@ -27,10 +27,27 @@ O tamanho de bloco com qual temos o menor miss rate corresponde á configuraçã
 ###Resultados
 
 ####Swim_m2b
-![resultados](https://github.com/titooan/MC723/blob/master/exercicio2/swim/table.png "resultados")
 
+![resultados](https://github.com/titooan/MC723/blob/master/exercicio2/swim/table.png "resultados")
+#####Instruction cache
 No caso do programa Swim, podemos perceber que a configuração da cache de instruções não tem muita importancia, o miss rate é sempre muito pequeno. 
 É possivel ter um miss rate de 0% (na verdade tem alguns miss mas a proporção é tão pequena que podemos dizer que é 0), com uma cache de 4K com blocos de 128.
 Também é possivel ter o mesmo resultado com uma cache de 8K e blocos de 32, o uma cache de tamanho maior ou egual a 16K e qualquer tamanho de bloco. 
 
+(Nesse caso não precisa de grafos)
 
+#####Data cache
+![resultados](https://github.com/titooan/MC723/blob/master/exercicio2/swim/dsize.png "resultados")
+![resultados](https://github.com/titooan/MC723/blob/master/exercicio2/swim/dbsize.png "resultados")
+
+Com esse grafos a gente pode ver que quanto melhor o tamanho da cache, melhor o restultado. 
+Escolhi uma cache de 128K, e experimentei varios tamanhos de bloco para descobrir o melhor.
+
+#####Melhor configuração
+**Cache de Instruções :**
+* Tamanho da cache : 4K
+* Tamanho do bloco : 128
+* 
+**Cache de Dados :**
+* Tamanho da cache : 128K
+* Tamanho do bloco : 512
