@@ -126,5 +126,6 @@ Aqui também escolhi uma cache de 128K, e experimentei varios tamanhos de bloco 
 * Tamanho do bloco : 128
 
 
-
+###Conclusão
+Com esses resultados conseguimos indicar quais são as melhores configurações de cache para varios programas, para ter um numero de cache miss o menor possivel e assim ter o melhor desempenho possivel.
 
