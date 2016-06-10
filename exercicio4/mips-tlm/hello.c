@@ -10,6 +10,6 @@ main()
 	*address = 10;
 
 	printf("%d\n", *address); 
-	//printf("%d\n", *address); 
-	//printf("%d\n", *address); 
+	printf("%d\n", *address); 
+	printf("%d\n", *address); 
 }
