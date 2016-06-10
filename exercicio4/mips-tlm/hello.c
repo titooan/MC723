@@ -7,7 +7,7 @@ main()
     printf("Hello World\n");
 	
 	volatile int* address = (int*) (100*1024*1024);
-	*address = 10;
+	*address = 0;
 
 	printf("%d\n", *address); 
 	printf("%d\n", *address); 
