@@ -2,9 +2,12 @@
 
 #include<stdio.h>
 
+volatile int numberProcs = 0;
+
 main()
 {
-    printf("Hello World\n");
+	int numProc = numberProcs++;
+    printf("Hello World %d/%d\n", numProc, numberProcs);
 	
 	volatile int* address = (int*) (100*1024*1024);
 	*address = 0;

@@ -69,7 +69,7 @@ uint32_t v = 0;
 ac_tlm_rsp_status ac_tlm_peripheral::writem( const uint32_t &a , const uint32_t &d )
 {
   v = d;
-  cout << "addr: " <<  std::hex  << a << " data: " << d << endl;
+  //cout << "addr: " <<  std::hex  << a << " data: " << d << endl;
   
   return SUCCESS;
 }
