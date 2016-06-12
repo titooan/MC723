@@ -165,3 +165,8 @@ void ReleaseLocalLock(volatile int* lock){
 
 A applicação pode usar essas funções para accessar uma memoria compartilhada.
 
+Eu tentei implementar um programa que calcule o número de números primos menores que MAX. 
+Eu encontrei problemas que eu não consegui resolver, então não consegui comparar os tempos de execução da versão single core 
+e da versão multicore do programa. 
+O programa está no arquivo [application.cpp](https://github.com/titooan/MC723/blob/master/exercicio4/mips-tlm/application.cpp).
+
