@@ -130,12 +130,36 @@ Podemos depois usar essa plataforma para executar una aplicação que faça uso 
 Para gerenciar o controle de concorrência, implementamos as seguinte funções : 
 
 ```C++
+#define LOCK_ADDRESS (100*1024*1024);
+volatile int *gLock = ( volatile int *) LOCK_ADDRESS;
+
 void AcquireGlobalLock(){
-	while(*lock);
+	while(*gLock);
 }
 
 void ReleaseGlobalLock(){
+	*gLock = 0;
+}
+```
+
+O LocalLock pode ser implementado assim :
+
+```C++
+void AcquireLocalLock(volatile int* lock){
+	AcquireGlobalLock();
+	while(*lock){
+		ReleaseGlobalLock();
+   	for(int i=0; i < 15; i++) {}
+   	AcquireGlobalLock();
+   }
+	*lock = 1;
+	ReleaseGlobalLock();
+}
+
+void ReleaseLocalLock(volatile int* lock){
+	AcquireGlobalLock();
 	*lock = 0;
+	ReleaseGlobalLock();
 }
 ```
 
