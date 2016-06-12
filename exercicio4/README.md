@@ -1,7 +1,7 @@
 # Exercício 4 : Plataformas e Periféricos
 #####Titouan THIBAUD - RA : 180879
 
-##Atividade
+##Implementação do periférico básico
 Para começar a atividade, modificamos o codigo da plataforma para criar um periferico que implemente a funcionalidade load-and-increment.
 
 Por isso, modifiquei o arquivo `ac_tlm_preipheral.cpp` para ter o seguinte comportamento : toda leitura retorna o valor armazenado e muda o valor para 1. 
@@ -58,4 +58,86 @@ main()
 ```
 
 Podemos assim verificar que o valor escrito na tela é o valor armazenado na primeira linha, e depois o valor "1".
+
+##Plataforma multicore
+
+Agora temos que modificar o arquivo `main.cpp` da plataforma para conetar dois processadores no roteador. 
+Aqui está o novo codigo : 
+
+```C++
+int sc_main(int ac, char *av[])
+{
+
+  //!  ISA simulator
+  mips mips_proc1("mips1");
+
+  //ADDED
+  mips mips_proc2("mips2");
+
+
+  ac_tlm_mem mem("mem", 100*1024*1024);
+  ac_tlm_router router("router");
+  ac_tlm_peripheral peripheral("peripheral"); 
+
+  router.MEM_port(mem.target_export);
+  router.PERIPHERAL_port(peripheral.target_export); 
+
+  mips_proc1.DM_port(router.target_export);
+
+  //ADDED
+  mips_proc2.DM_port(router.target_export);
+
+
+#ifdef AC_DEBUG
+  ac_trace("mips_proc1.trace");
+#endif 
+
+  //ADDED
+  char *av1[3];
+  char ac1 = ac;
+  char *av2[3];
+  int ac2 = ac;
+ 
+  memcpy(av1, av, ac * sizeof *av);
+  memcpy(av2, av, ac * sizeof *av);
+
+  mips_proc1.init(ac1, av1);
+  mips_proc2.init(ac2, av2);
+  mips_proc1.set_instr_batch_size(1);
+  mips_proc2.set_instr_batch_size(1);
+
+  cerr << endl;
+
+  sc_start();
+
+  mips_proc1.PrintStat();
+  mips_proc2.PrintStat();
+  cerr << endl;
+
+#ifdef AC_STATS
+  ac_stats_base::print_all_stats(std::cerr);
+#endif 
+
+#ifdef AC_DEBUG
+  ac_close_trace();
+#endif 
+
+  return mips_proc1.ac_exit_status;
+}
+```
+
+Podemos depois usar essa plataforma para executar una aplicação que faça uso efetivo da plataforma multicore. 
+Para gerenciar o controle de concorrência, implementamos as seguinte funções : 
+
+```C++
+void AcquireGlobalLock(){
+	while(*lock);
+}
+
+void ReleaseGlobalLock(){
+	*lock = 0;
+}
+```
+
+A applicação pode usar essas funções para accessar uma memoria compartilhada.
 
